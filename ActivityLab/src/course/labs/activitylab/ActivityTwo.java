@@ -29,13 +29,20 @@ public class ActivityTwo extends Activity {
 	
 	// You will need to increment these variables' values when their
 	// corresponding lifecycle methods get called.
-	
+	int mCreate = 0;
+	int mResume = 0;
+	int mStart = 0;
+	int mRestart = 0;
 
 	
 	
 	// TODO: Create variables for each of the TextViews
 	// named  mTvCreate, mTvRestart, mTvStart, mTvResume.
 	// for displaying the current count of each counter variable
+	TextView mTvCreate;
+	TextView mTvResume;
+	TextView mTvStart ;
+	TextView mTvRestart;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +52,10 @@ public class ActivityTwo extends Activity {
 		// TODO: Assign the appropriate TextViews to the TextView variables
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
-
-
-		
+		mTvCreate = (TextView) findViewById(R.id.create);
+		mTvResume = (TextView) findViewById(R.id.resume);
+		mTvStart = (TextView) findViewById(R.id.start);
+		mTvRestart = (TextView) findViewById(R.id.restart);		
 		
 		
 		
@@ -60,8 +68,7 @@ public class ActivityTwo extends Activity {
 				// TODO:
 				// This function closes Activity Two
 				// Hint: use Context's finish() method
-
-				
+				ActivityTwo.this.finish();
 			
 			}
 		});
@@ -74,7 +81,10 @@ public class ActivityTwo extends Activity {
 			// Only need 4 lines of code, one for every count variable
 
 
-			
+			mCreate = savedInstanceState.getInt(CREATE_KEY);
+			mResume = savedInstanceState.getInt(RESUME_KEY);
+			mRestart = savedInstanceState.getInt(RESTART_KEY);
+			mStart = savedInstanceState.getInt(START_KEY);
 			
 			
 			
@@ -86,7 +96,7 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
+		mCreate += 1;
 
 		
 		
@@ -104,7 +114,7 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
+		mStart += 1;
 
 		
 		
@@ -120,7 +130,7 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
+		mResume += 1;
 
 	
 	}
@@ -151,8 +161,7 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
+		mResume += 1;
 	
 	
 	}
@@ -172,7 +181,10 @@ public class ActivityTwo extends Activity {
 		// Save counter state information with a collection of key-value pairs
 		// 4 lines of code, one for every count variable
 
-
+		savedInstanceState.putInt(CREATE_KEY, mCreate);
+		savedInstanceState.putInt(RESTART_KEY, mRestart);
+		savedInstanceState.putInt(RESUME_KEY, mResume);
+		savedInstanceState.putInt(START_KEY,mStart);
 
 		
 		
