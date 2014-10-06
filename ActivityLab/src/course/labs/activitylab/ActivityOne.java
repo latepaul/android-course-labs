@@ -95,6 +95,7 @@ public class ActivityOne extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
 		mCreate = mCreate + 1;
+		displayCounts();
 
 	}
 
@@ -111,6 +112,7 @@ public class ActivityOne extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface
 		mStart += 1;
+		displayCounts();
 
 	}
 
@@ -125,6 +127,7 @@ public class ActivityOne extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface
 		mResume += 1;
+		displayCounts();
 
 	}
 
@@ -155,6 +158,7 @@ public class ActivityOne extends Activity {
 		// Update the appropriate count variable
 		// Update the user interface
 		mRestart += 1;
+		displayCounts();
 	}
 
 	@Override
